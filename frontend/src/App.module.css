@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   text-decoration: none;
+  outline: 0;
 
   transition: 0.2s;
 }
@@ -16,6 +17,10 @@ body {
   width: 900px;
 }
 
+.headerContainer h1 {
+  color: #3a4b5c;
+}
+
 .container {
   display: flex;
   max-width: 900px;
@@ -25,6 +30,45 @@ body {
 .container .leftSide {
   flex: 1;
   margin-right: 40px;
+}
+
+.container .leftSide h2 {
+  margin: 0;
+  font-size: 25px;
+  color: #3a4b5c;
+}
+
+.container .leftSide p {
+  margin-top: 15px;
+  font-size: 15px;
+  margin-bottom: 40px;
+  color: #6a7d8b;
+}
+
+.container .leftSide input {
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid rgba(150, 163, 171, 0.5);
+  padding: 10px 2px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.container .leftSide button {
+  background-color: #227c9d;
+  color: #fff;
+  font-size: 15px;
+  border: 0;
+  border-radius: 10px;
+  padding: 15px 0;
+  width: 100%;
+  margin-top: 40px;
+  cursor: pointer;
+  transition: all ease 0.3s;
+}
+
+.container .leftSide button:hover {
+  opacity: 0.8;
 }
 
 .container .rightSide {

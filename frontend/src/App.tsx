@@ -17,13 +17,13 @@ const App = () =>{
     <div className={styles.main}>
       <header>
         <div className={styles.headerContainer}>
-          <h3>IMC - (ou índice de massa corporal)</h3>
+          <h1>IMC - (ou índice de massa corporal)</h1>
         </div>
       </header>
 
       <div className={styles.container}>
         <div className={styles.leftSide}>
-          <h1>Calcule o seu IMC.</h1>
+          <h2>Calcule o seu IMC.</h2>
           <p>IMC significa Índice de Massa Corporal e é um parâmetro utilizado para saber se o peso está de acordo com a altura, o que pode interferir diretamente na saúde e qualidade de vida da pessoa.</p>
 
           <input 
