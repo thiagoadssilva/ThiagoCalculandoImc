@@ -5,9 +5,10 @@ import downImage from '../../assets/down.png'
 
 type Props ={
   item: Level
+  clearInputs?:boolean
 }
 
-export const GridItem = ({item}: Props) =>{
+export const GridItem = ({item, clearInputs}: Props) =>{
   return(
     <div className={styles.main} style={{backgroundColor: item.color}}>
       <div className={styles.gridIcon}>
@@ -15,7 +16,7 @@ export const GridItem = ({item}: Props) =>{
       </div>
       <div className={styles.gridTitle}>{item.title}</div>
 
-      {item.yourImc &&
+      {item.yourImc && !clearInputs &&
         <div className={styles.yourImc}>Seu IMC é de {item.yourImc} kg/m²</div>
       }
 

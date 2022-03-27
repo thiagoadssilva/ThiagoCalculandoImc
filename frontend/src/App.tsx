@@ -4,9 +4,10 @@ import { GridItem } from './components/GridItem';
 import {levels, calculateImc, Level} from './helpers/imc';
 
 const App = () =>{
-  const [heightField, setHeightField] = useState<number>(0);
-  const [weightField, setWeightField] = useState<number>(0);
+  const [heightField, setHeightField] = useState<number>(0)
+  const [weightField, setWeightField] = useState<number>(0)
   const [toShow, setToShow] = useState<Level | null>(null)
+  const [clearInputs, setClearInputs] = useState(false);
 
   const handleCalculateButton = () =>{
     if(heightField && weightField){
@@ -20,6 +21,7 @@ const App = () =>{
     setHeightField(0)
     setWeightField(0)
     setToShow(null)
+    setClearInputs(true)
   }
 
   return(
@@ -48,6 +50,8 @@ const App = () =>{
             onChange={e => setWeightField(parseFloat(e.target.value))}
           />
 
+
+
           <button onClick={handleCalculateButton}>Calcular</button>
           <button className={styles.buttonClear} onClick={handleClear}>Limpar</button>
         </div>
@@ -55,7 +59,7 @@ const App = () =>{
           {!toShow &&
             <div className={styles.grid}>
               {levels.map((item, key) =>(
-                <GridItem  key={key} item={item}/>
+                <GridItem  key={key} item={item} clearInputs={clearInputs}/>
               ))}
             </div>
           }
