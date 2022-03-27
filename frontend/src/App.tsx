@@ -1,18 +1,25 @@
 import { useState } from 'react';
 import styles from './App.module.css';
 import { GridItem } from './components/GridItem';
-import {levels, calculateImc} from './helpers/imc';
+import {levels, calculateImc, Level} from './helpers/imc';
 
 const App = () =>{
   const [heightField, setHeightField] = useState<number>(0);
   const [weightField, setWeightField] = useState<number>(0);
+  const [toShow, setToShow] = useState<Level | null>(null)
 
   const handleCalculateButton = () =>{
     if(heightField && weightField){
-
+      setToShow(calculateImc(heightField, weightField))
     }else{
       alert('Todos os campos são obrigatórios!!');
     }
+  }
+
+  const handleClear =()=>{
+    setHeightField(0)
+    setWeightField(0)
+    setToShow(null)
   }
 
   return(
@@ -42,13 +49,23 @@ const App = () =>{
           />
 
           <button onClick={handleCalculateButton}>Calcular</button>
+          <button className={styles.buttonClear} onClick={handleClear}>Limpar</button>
         </div>
         <div className={styles.rightSide}>
-          <div className={styles.grid}>
-            {levels.map((item, key) =>(
-              <GridItem  key={key} item={item}/>
-            ))}
-          </div>
+          {!toShow &&
+            <div className={styles.grid}>
+              {levels.map((item, key) =>(
+                <GridItem  key={key} item={item}/>
+              ))}
+            </div>
+          }
+          { toShow &&
+            <div className={styles.rightBig}>
+              <div className={styles.rightArrow}></div>
+              <GridItem item={toShow}/>
+            </div>
+          }
+          
         </div>
       </div>
     </div>
