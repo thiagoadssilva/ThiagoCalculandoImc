@@ -12,6 +12,10 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.main {
+  margin-bottom: 30px;
+}
+
 .headerContainer {
   margin: 40px auto;
   max-width: 1200px;
@@ -54,6 +58,10 @@ body {
   font-size: 14px;
 }
 
+.container .leftSide input:disabled {
+  opacity: 0.5;
+}
+
 .container .leftSide button {
   background-color: #227c9d;
   color: #fff;
@@ -73,8 +81,12 @@ body {
   opacity: 0.8;
 }
 
+.container .leftSide button:disabled {
+  opacity: 0.5;
+}
+
 .container .leftSide .buttonClear {
-  background-color: #2d525d;
+  background-color: #227c9d;
   width: 30%;
 }
 
@@ -94,4 +106,81 @@ body {
 .container .rightSide .rightBig {
   flex: 1;
   display: flex;
+}
+
+.container .rightSide .rightArrow {
+  position: absolute;
+  background-color: #227c9d;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-left: -35px;
+  margin-top: 145px;
+}
+
+@media (max-width: 770px) {
+  header {
+    padding: 0 20px;
+  }
+
+  .container {
+    padding: 0 20px;
+    flex-direction: column;
+  }
+
+  .container .leftSide {
+    margin-right: 0;
+  }
+
+  .container .rightSide {
+    margin-left: 0;
+    margin-top: 50px;
+  }
+
+  .container .leftSide h2 {
+    font-size: 20px;
+  }
+
+  .headerContainer h1 {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 430px) {
+  .headerContainer h1 {
+    font-size: 20px;
+  }
+
+  .container .leftSide h2 {
+    font-size: 15px;
+  }
+
+  .container .leftSide p {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    font-size: 11px;
+  }
+
+  .container .leftSide input {
+    margin-bottom: 10px;
+    font-size: 11px;
+  }
+
+  .container .leftSide button {
+    font-size: 15px;
+    padding: 10px;
+    margin-top: 10px;
+    margin-right: 0px;
+    margin-left: 20px;
+  }
+
+  .container .rightSide .grid {
+    display: grid;
+    grid-template-columns: repeat(1, 2fr);
+    gap: 10px;
+  }
 }
