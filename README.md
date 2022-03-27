@@ -11,5 +11,3 @@
 https://github.com/thiagoadssilva/ThiagoCalculandoImc/blob/main/frontend/README.md
 
 <hr>
-
-## Projeto Publicado: Em desenvolvimento

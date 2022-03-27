@@ -4,20 +4,15 @@
 
 ### Commando para criação da aplicação do reactjs usando um template com typescript:
 
-    yarn create react-app expense-tracker --template typescript
+    yarn create react-app frontend --template typescript
 
 <hr>
 
-### Comando que vai permitir usar comando css, através da biblioteca styled components:
+## Nessa projeto usei:
 
-    yarn add styled-components
-
-- Referências: https://styled-components.com/
-
-<hr>
-
-### Esse comando que vamos ultilizar agora é obrigatório por conta do typescript pois ele pede a depedência para o styled components, porém a nossa instalação só vai ser no ambiente de desenvolvimento.
-
-    yarn add @types/styled-components -D
+- import { useState } from 'react'; <br>
+- import styles from './App.module.css';
 
 <hr>
+
+### Na estrutura do css usei pasta com index do componente juntos com um arquivo module para css...
